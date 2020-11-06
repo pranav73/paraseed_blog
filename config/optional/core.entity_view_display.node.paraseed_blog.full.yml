@@ -1,0 +1,41 @@
+uuid: 91b25c05-dc6e-43e7-bb9e-2c8c0c713605
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.paraseed_blog.body
+    - field.field.node.paraseed_blog.field_blog_categories
+    - field.field.node.paraseed_blog.field_media
+    - field.field.node.paraseed_blog.field_tags
+    - node.type.paraseed_blog
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.paraseed_blog.full
+targetEntityType: node
+bundle: paraseed_blog
+mode: full
+content:
+  field_media:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_blog_categories: true
+  field_tags: true

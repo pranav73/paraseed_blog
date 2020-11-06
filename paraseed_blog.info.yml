@@ -1,0 +1,20 @@
+name: 'Paraseed Blog'
+description: 'Provides Blog post content type and related configuration. Use Blog to publish blog post by different authors in the Blog section of the site.'
+type: module
+core: 8.x
+version: 8.x-1.0
+package: Paraseed
+dependencies:
+  - paraseed_media
+  - vmi
+  - taxonomy_menu
+  - page_manager
+  - page_manager_ui
+  - panels
+  - panels_ipe
+  - autocomplete_deluxe
+install:
+  - statistics
+  - length_indicator
+  - advanced_text_formatter
+  - maxlength

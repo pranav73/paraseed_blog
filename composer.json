@@ -1,0 +1,54 @@
+{
+  "name": "pranav/paraseed_blog",
+  "description": "Provides Blog post content type and related configuration. Use Blog to publish blog post by different authors in the Blog section of the site.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Pranav Aeer",
+      "email": "pranav.aeer@osseed.com"
+    }
+  ],
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "oomphinc/composer-installers-extender": "~1.0",
+    "cweagans/composer-patches": "~1.0",
+    "drupal/drupal-library-installer-plugin": "^0.3",
+    "drupal/core": "^8.8.0 || ~9.0.0",
+    "pranav/paraseed_media": "dev-master",
+    "drupal/taxonomy_menu": "3.4",
+    "drupal/length_indicator": "~1.0",
+    "drupal/advanced_text_formatter": "~2.0",
+    "drupal/maxlength": "~1.0"
+  },
+  "extra": {
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
+    "installer-paths": {
+      "libraries/{$name}": [
+        "type:drupal-library"
+      ]
+    },
+    "enable-patching": true,
+    "composer-exit-on-patch-failure": true,
+    "patches": {
+      "drupal/taxonomy_menu": {
+        "Issue #2939143: Fixed Undefined method TaxonomyMenu::generateTaxonomyLinks()":
+        "https://www.drupal.org/files/issues/2018-12-23/2939143-10.patch"
+      }
+    }
+  }
+}

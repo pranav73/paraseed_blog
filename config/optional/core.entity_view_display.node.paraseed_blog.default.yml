@@ -1,0 +1,35 @@
+uuid: 9c9427a9-9855-4250-bf42-6d1b1a9b9a2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.paraseed_blog.body
+    - field.field.node.paraseed_blog.field_blog_categories
+    - field.field.node.paraseed_blog.field_media
+    - field.field.node.paraseed_blog.field_tags
+    - node.type.paraseed_blog
+  module:
+    - user
+id: node.paraseed_blog.default
+targetEntityType: node
+bundle: paraseed_blog
+mode: default
+content:
+  field_media:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_blog_categories: true
+  field_tags: true
